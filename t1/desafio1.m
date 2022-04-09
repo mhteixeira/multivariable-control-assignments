@@ -13,10 +13,10 @@ clear; clc;
 %% Definição dos parâmetros do problema
 M   = 1;
 K   = 1;
-T_f = 1;
+Tf  = 1;
 
-x_0 = [0 0 0 0];
-x_f = [1 0 1 0];
+x0 = [0 0 0 0];
+xf = [1 0 1 0];
 
 %% Definição do sistema a ser controlado
 
@@ -27,6 +27,9 @@ D   = [0 0; 0 0];
 
 %% Cálculo do gramiano
 
+Wc = ctrb_gramm(A, B, [0 Tf]);
+
 %% Execução do diagrama do Simulink
 
 %% Apresentação dos resultados
+
