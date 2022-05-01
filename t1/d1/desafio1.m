@@ -18,7 +18,7 @@ Tf  = 2;
 sim_step = 0.01;
 
 x0 = [0; 0; 0; 0];
-xf = [1; 0; 1; 0];
+xf = [1; 2; 1; 0];
 
 %% Definição do sistema a ser controlado
 
