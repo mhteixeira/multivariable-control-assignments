@@ -17,7 +17,7 @@ K   = 1;
 Tf  = 1;
 sim_step = 0.01;
 
-x0   = [2; 0; 1; 0];
+x0   = [1; 0; 2; 0];
 zero = [0; 0; 0; 0];
 
 %% Definição do sistema a ser observado 
