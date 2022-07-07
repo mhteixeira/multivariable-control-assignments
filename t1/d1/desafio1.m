@@ -14,11 +14,11 @@ clear; clc;
 
 M   = 1;
 K   = 1;
-Tf  = 2;
+Tf  = 1;
 sim_step = 0.01;
 
 x0 = [0; 0; 0; 0];
-xf = [1; 2; 1; 0];
+xf = [1; -2; 1; 0];
 
 %% Definição do sistema a ser controlado
 

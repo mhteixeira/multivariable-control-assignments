@@ -69,7 +69,7 @@ function obsv_plot(sim_out, u1, u2, x0, result_type)
 
     subplot(2, 2, 2)
     plot(t, error_x0e(:, 2), 'Color', [0.8500 0.3250 0.0980]);
-    ylabel('Erro de velocidade (m)')
+    ylabel('Erro de velocidade (m/s)')
     xlabel('Tempo (s)')
     title('Erro na estimativa de x`_1(0)');
     legend('${\dot{x}_1}(0) - \overline{\dot{x}}_1(0)$','Interpreter','latex', 'FontSize',10, 'Location', 'Best');
@@ -84,12 +84,14 @@ function obsv_plot(sim_out, u1, u2, x0, result_type)
 
     subplot(2, 2, 4)
     plot(t, error_x0e(:, 4), 'Color', [0.4940 0.1840 0.5560]);
-    ylabel('Erro de velocidade (m)')
+    ylabel('Erro de velocidade (m/s)')
     xlabel('Tempo (s)')
     title('Erro na estimativa de x`_2(0)');
     legend('${\dot{x}_2}(0) - \overline{\dot{x}}_2(0)$','Interpreter','latex', 'FontSize',10, 'Location', 'Best');
-
-    saveas(fig,[folder, '/x0_estimative.pdf']);
+    
+    filename = sprintf(['/x0_estimative %.2f %.2f %.2f %.2f.pdf'], ...
+        x0(1), x0(2), x0(3), x0(4));
+    saveas(fig,[folder, filename]);
     close(fig)
     
 end
