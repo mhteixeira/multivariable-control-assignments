@@ -16,7 +16,7 @@ clear; clc;
 M   = 1;
 K_m   = 1;
 Tf  = 50;
-sim_step = 0.01;
+sim_step = 0.001;
 
 x0 = [0; 0; 0; 0];
 r = [1; 5];
@@ -58,13 +58,12 @@ sim_out2 = sim("comp_model.slx", ...
 
 comp_plot(sim_out2, r, 'lqr_result.pdf');
 
-%% Imposição de polos com polos de valor grande:
+%% Imposição de polos de valor grande:
 
 pF = [-5 -2 -5 -2];
 pK = [-1 -2 -1 -2];
 F = -place(A , B, pF);
-% Para pK * 500, os valores do esforço de controle -> inf
-K = place(A.',C.',pK*120)';
+K = place(A.',C.',pK*500)';
 
 
 %% Simulação de imposição de polos com polos grandes:
